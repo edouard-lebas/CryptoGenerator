@@ -18,18 +18,3 @@ class txtToShaClass:
 
     def processSha512(self):
         return hashlib.sha512(self.text).hexdigest()
-
-toto = txtToShaClass("bonjour")
-print toto.processSha1()
-
-toto = txtToShaClass("bonjour")
-print toto.processSha224()
-
-toto = txtToShaClass("bonjour")
-print toto.processSha256()
-
-toto = txtToShaClass("bonjour")
-print toto.processSha384()
-
-toto = txtToShaClass("bonjour")
-print toto.processSha512()
