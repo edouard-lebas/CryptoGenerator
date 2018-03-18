@@ -8,7 +8,7 @@ class md5ToTxtClass:
         self.email = ""
         self.code = ""
 
-    def processTxt(self):
+    def processMd5(self):
         params = urllib.urlencode({'hash': self.hash, 'hash_type': self.type, 'email': self.email, 'code': self.code})
         f = urllib.urlopen("http://md5decrypt.net/Api/api.php?%s" % params)
         resp = f.read()

@@ -1,10 +1,12 @@
 from src.txtToMd5Class import txtToMd5Class
 from src.txtToShaClass import txtToShaClass
 from src.md5ToTxtClass import md5ToTxtClass
+from src.shaToTxtClass import shaToTxtClass
 
 def menuEncOrDec():
     print "1 > Encrypt"
     print "2 > Decrypt"
+    print "3 > Exit"
     return raw_input("Choice :")
 
 def menu():
@@ -17,13 +19,9 @@ def menuSha():
     print "1 > SHA1"
     print "2 > SHA224"
     print "3 > SHA256"
-    print "4 > SHA512"
+    print "4 > SHA384"
     print "5 > SHA512"
     print "6 > RETURN"
-    return raw_input("Choice :")
-
-def menuDecr():
-    print "1 > MD5"
     return raw_input("Choice :")
 
 while exit != '1':
@@ -46,15 +44,15 @@ while exit != '1':
                 print s.processSha224()
             elif choiceSha == '3':
                 SHA256 = raw_input("Text To SHA256 : ")
-                s = txtToShaClass(sha256)
+                s = txtToShaClass(SHA256)
                 print s.processSha256()
             elif choiceSha == '4':
                 SHA384 = raw_input("Text To SHA384 : ")
-                s = txtToShaClass(sha384)
+                s = txtToShaClass(SHA384)
                 print s.processSha384()
             elif choiceSha == '5':
                 SHA512 = raw_input("Text To SHA512 : ")
-                s = txtToShaClass(sha512)
+                s = txtToShaClass(SHA512)
                 print s.processSha512()
             elif choiceSha == '6':
                 print "Return"
@@ -66,12 +64,39 @@ while exit != '1':
         else:
             print "Choice Error"
     elif encOrDec == '2':
-        ch = menuDecr()
+        ch = menu()
         if ch == "1":            
             ha = raw_input("Md5 To Text : ")
             m = md5ToTxtClass(ha)
-            print m.processTxt()
+            print m.processMd5()
+        elif ch == '2':
+            choiceSha = menuSha()
+            if choiceSha == '1':
+                sha1 = raw_input("SHA1 To Text : ")
+                s = shaToTxtClass(sha1)
+                print s.processSha1()
+            elif choiceSha == '2':
+                print "Not available"
+            elif choiceSha == '3':
+                SHA256 = raw_input("SHA256 To Text : ")
+                s = shaToTxtClass(SHA256)
+                print s.processSha256()
+            elif choiceSha == '4':
+                SHA384 = raw_input("SHA384 To Text : ")
+                s = shaToTxtClass(SHA384)
+                print s.processSha384()
+            elif choiceSha == '5':
+                SHA512 = raw_input("SHA512 To Text : ")
+                s = shaToTxtClass(SHA512)
+                print s.processSha512()
+            elif choiceSha == '6':
+                print "Return"
+            else:
+                print "Choice Error"
         else:
             print "Choice Error"
+    elif encOrDec == '3':
+        exit = '1'
+        print "Exit ..."
     else:
         print "Choice Error"
