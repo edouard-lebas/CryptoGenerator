@@ -35,7 +35,3 @@ class cesarToTxtClass:
                     word += self.alphabet[index]
             decrypted.append(word)
         return decrypted
-
-c = cesarToTxtClass("XSXS")
-print c.processCesarWithoutOffset()
-
