@@ -4,8 +4,8 @@ class shaToTxtClass:
     def __init__(self, hash):
         self.hash = hash
         self.type = "sha1"
-        self.email = ""
-        self.code = ""
+        self.email = "lebas.edouard@elebas.fr"
+        self.code = "7baef180cfe77097"
 
     def processSha1(self):
         self.type = "sha1"
