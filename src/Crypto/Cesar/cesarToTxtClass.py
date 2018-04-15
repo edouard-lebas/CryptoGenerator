@@ -22,7 +22,6 @@ class cesarToTxtClass:
     def processCesarWithoutOffset(self):
         decrypted = []
         for a in range(1,len(self.alphabet)+1):
-            print a
             word = ""
             for c in self.cesar:
                 if c in self.alphabet:

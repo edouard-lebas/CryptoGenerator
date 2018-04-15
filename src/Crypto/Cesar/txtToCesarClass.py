@@ -1,4 +1,4 @@
-class txtToCesar:
+class txtToCesarClass:
 
     def __init__(self,txt,offset):
         self.txt = txt.decode("utf-8").upper()
