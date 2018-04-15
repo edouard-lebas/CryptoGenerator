@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+from src.Miscellaneous.Parser import ParserClass
 from src.Crypto.Cesar.cesarToTxtClass import cesarToTxtClass
 from src.Crypto.Cesar.txtToCesarClass import txtToCesarClass
 from src.Hash.Md5.md5ToTxtClass import md5ToTxtClass
 from src.Hash.Md5.txtToMd5Class import txtToMd5Class
 from src.Hash.Sha.shaToTxtClass import shaToTxtClass
 from src.Hash.Sha.txtToShaClass import txtToShaClass
-from src.Miscellaneous.Parser import ParserClass
+from src.Crypto.Vigenere.txtToVigenereClass import txtToVigenereClass
+
 
 p = ParserClass.ParserClass()
 parsed = p.getParsed()
@@ -34,7 +36,9 @@ if parsed.text:
             print "TEXT > "+parsed.text
             print "CESAR > "+tces.processCesar()
         elif parsed.vigenere:
-            print "vigenere"
+            tvig = txtToVigenereClass(parsed.text,raw_input("Key : "))
+            print "TEXT > "+parsed.text
+            print "VIGENERE > "+tvig.processVigenere()
     elif parsed.translate:
         md5t = md5ToTxtClass(parsed.text)
         shat = shaToTxtClass(parsed.text)
